@@ -1,0 +1,8 @@
+valeur de base
+
+ "nbr_hosts": 2,
+    "reservation": 20,
+    "host_nbr_core": 10,
+    "host_nbr_ram": 256,
+    "vm_nbr_core": 2,
+    "vm_nbr_ram": 4,

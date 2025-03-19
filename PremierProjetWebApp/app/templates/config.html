@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Configuration</title>
+</head>
+<body>
+    {% extends 'base.html' %}
+
+    {% block content %}
+    <h1>Configuration Parameters</h1>
+    <form action="{{ url_for('save_config') }}" method="post">
+        <label for="nbr_hosts">Nombre de hosts:</label>
+        <input type="number" id="nbr_hosts" name="nbr_hosts" value="{{ parameters.nbr_hosts }}" required>
+        
+        <label for="reservation">Reservation HA (%):</label>
+        <input type="number" id="reservation" name="reservation" value="{{ parameters.reservation }}" required>
+        
+        <label for="host_nbr_core">Nombre de Core par host:</label>
+        <input type="number" id="host_nbr_core" name="host_nbr_core" value="{{ parameters.host_nbr_core }}" required>
+        
+        <label for="host_nbr_ram">Quantité de RAM par host (GB):</label>
+        <input type="number" id="host_nbr_ram" name="host_nbr_ram" value="{{ parameters.host_nbr_ram }}" required>
+        
+        <label for="vm_nbr_core">Nombre de Core par VM:</label>
+        <input type="number" id="vm_nbr_core" name="vm_nbr_core" value="{{ parameters.vm_nbr_core }}" required>
+        
+        <label for="vm_nbr_ram">Quantité de RAM par VM (GB):</label>
+        <input type="number" id="vm_nbr_ram" name="vm_nbr_ram" value="{{ parameters.vm_nbr_ram }}" required>
+        
+        <button type="submit">Save Configuration</button>
+    </form>
+    {% endblock %}
+</body>
+</html>
